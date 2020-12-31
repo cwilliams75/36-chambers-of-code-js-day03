@@ -7,8 +7,20 @@ class Problem {
      * For example: if num is 4602225 your program should return the string false because 5 is not an even number.
      */
     simpleEvens(num) {
-        // code goes here  
-        return num;
+
+        //  Step 1. Create a variable that will take in the input parameter to be analyzed. 
+        //  Step 2. Create a for loop that will iterate through the input and deterine if the number is even or odd using the (Modulus % = 2).
+        //  Step 3. Create a counter to hold each individual number.
+        //  Step 4. Create a if statement to determine if each number is even it would return true, if not return false. 
+        //  Step 5. Create an else statement to determine for odd numbers.
+
+        let str = num.toString();
+        let splitStr = str.split("");
+        for (let i = 0; i < splitStr.length; i++) {
+            if (splitStr[i] % 2 != 0)
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -21,6 +33,7 @@ class Problem {
      * and 3 question marks between 5 and 5 at the end of the string.
      */
     questionsMarks(str) {
+
         // code goes here  
         return null;
     }
@@ -33,8 +46,17 @@ class Problem {
      * For example: if str is "BOB loves-coding" then your program should return the string bob_loves_coding.
      */
     snakeCase(str) {
+        // Step 1. Create a variable being passed into the function to be snakecased.
+        // Step 2. 
+
+        const toSnakeCase = str => str && str
+            .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+            .map(x => x.toLowerCase())
+            .join('_');
+       
+        console.log(toSnakeCase(str));
         // code goes here  
-        return null;
+        return toSnakeCase(str);
     }
 
     /**
@@ -47,7 +69,7 @@ class Problem {
     gcf(arr) {
         // code goes here  
         return null;
-      }
+    }
 
 
 }
